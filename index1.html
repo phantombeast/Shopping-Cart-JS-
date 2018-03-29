@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script>
+
+        window.onload=function (ev) {
+
+            function saveValue(firstpageLoad) {
+                //  localStorage.setItem('totalValue', totalVal);
+                // localStorage.setItem('totalQnty',total);
+                var  name;
+                if(!firstpageLoad) {
+                    localStorage.setItem("name", 'pulkit');
+                    console.log(localStorage.getItem(name));
+                }
+            }
+            saveValue(false);
+        }
+    </script>
+</head>
+<body>
+<div class="page-header">
+   <h1> Shopping Bag</h1>
+</div>
+
+
+    <div class="col">
+        <div class="col">
+        <img src="puls.jpg" height="200px" width="200px"><br>
+            <div class="quantity">
+                <!--<button id="plus-btn" type="button" name="button">-->
+                    <!--<img src="add-128.png" height="30px" width="30px">-->
+                <!--</button>-->
+                <form>
+                <input type="number" name="name" id="formm" value="1" onchange="valueChange()">
+                </form>
+                <!--<button id="minus-btn" type="button" name="button">-->
+                    <!--<img src="minus.png" height="30px" width="30px">-->
+                <!--</button><br>-->
+            </div>
+            <div class="val">
+                Total Value:
+                <input type="number" id="atotal" >
+            </div>
+    </div><br><br><br>
+    <div class="col">
+        <img src="puls.jpg" height="200px" width="200px"><br>
+    </div>
+    </div>
+<script src="script.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+</body>
+<script type="text/javascript">
+//var tot=1;
+var totalAmt=1
+
+function valueChange() {
+    var qty=document.getElementById('formm');
+    var totQty=document.getElementById('atotal');
+    document.getElementById('formm').innerHTML=window.location.search;
+    totalAmt=qty.value*1000;
+    totQty.value=totalAmt;
+    document.getElementById('atotal').setAttribute('value',totalAmt)
+}
+
+
+// document.getElementById('atotal').setAttribute('value',totVal);
+// if(qty.value!=1){
+//     totVal=qty.value*1000;
+//     document.getElementById('atotal').setAttribute('value',totVal);
+//
+// }
+
+
+</script>
+</html>
